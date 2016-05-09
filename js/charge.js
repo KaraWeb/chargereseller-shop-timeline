@@ -78,10 +78,10 @@ jQuery(document).ready(function ($) {
 		} else {
 			$('div.operator.'+ DefaultOperator).addClass('active');
 		}
-                
 		if (jQuery.inArray(DefaultChargeKind, ['Bill', 'GiftCard', 'Antivirus']) > -1) {
 			if (paymentGatewayStatus[DefaultChargeKind] == true) {
 				$('div.container.' + DefaultChargeKind + ' div#payment').show();
+                
 			} else {
 				$('div.container.' + DefaultChargeKind + ' div#payment').hide();
 			}
@@ -855,19 +855,19 @@ jQuery(document).ready(function ($) {
 		"آنتی ویروس قدرتمند Norton"
 	];
 	
-	$('div.operator.GiftCard').click(function() {
+	$('div.operator.GiftCard').click(function() {        
 		$('div.GiftCard div.giftcard-types > select').attr('id', 'GiftCard' + $(this).data('type') + 'Types');
 		setProducts('GiftCard', $(this).data('type'));
 		$('div.GiftCard div.info div#operator').removeClass().addClass('operator GiftCard ' + $(this).data('type'));
+        
 		$('div.GiftCard div.info div.title').text("گیفت کارت " + GiftCardKindTitle[GiftCardKinds.indexOf($(this).data('type'))]);
 		$('div.GiftCard div.info div.description').text(GiftCardKindDescription[GiftCardKinds.indexOf($(this).data('type'))]);
-		// $('div.container.GiftCard div.GiftCard div.operators').slideUp(500);
 		$('div.container.GiftCard div.GiftCard div.buy').slideDown(1500);
 		$('div.container.GiftCard div#payment').fadeIn();
 		
 		paymentGatewayStatus[DefaultChargeKind] = true;
 	});
-	
+    
 	$('div.GiftCard div.giftcard-types select').change(function() {
 		$('.container.GiftCard .GiftCard input#UnitAmount').val($(this).find(':selected').data('price'));
 	});
@@ -876,9 +876,9 @@ jQuery(document).ready(function ($) {
 		$('div.Antivirus div.antivirus-types > select').attr('id', 'Antivirus' + $(this).data('type') + 'Types');
 		setProducts('Antivirus', $(this).data('type'));
 		$('div.Antivirus div.info div#operator').removeClass().addClass('operator Antivirus ' + $(this).data('type'));
+        
 		$('div.Antivirus div.info div.title').text("آنتی ویروس " + AntivirusKindTitle[AntivirusKinds.indexOf($(this).data('type'))]);
-		$('div.Antivirus div.info div.description').text(GiftCardKindDescription[GiftCardKinds.indexOf($(this).data('type'))]);
-		// $('div.container.Antivirus div.Antivirus div.operators').slideUp(500);
+		$('div.Antivirus div.info div.description').text(AntivirusKindDescription[AntivirusKinds.indexOf($(this).data('type'))]);
 		$('div.container.Antivirus div.Antivirus div.buy').slideDown(1500);
 		$('div.container.Antivirus div#payment').fadeIn();
 		
