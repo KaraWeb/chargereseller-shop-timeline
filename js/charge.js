@@ -78,7 +78,7 @@ jQuery(document).ready(function ($) {
 		} else {
 			$('div.operator.'+ DefaultOperator).addClass('active');
 		}
-		
+                
 		if (jQuery.inArray(DefaultChargeKind, ['Bill', 'GiftCard', 'Antivirus']) > -1) {
 			if (paymentGatewayStatus[DefaultChargeKind] == true) {
 				$('div.container.' + DefaultChargeKind + ' div#payment').show();
@@ -686,11 +686,12 @@ jQuery(document).ready(function ($) {
 		$('input#NonCreditMTN').prop('disabled', false);
 		startup();
 		
-		if (DefaultChargeKind == 'TrafficCard') {
-			setProducts('TrafficCard', '');
-		}
+        if (jQuery.inArray(DefaultChargeKind, ['GiftCard', 'Antivirus']) > -1) {
+            $('#chargeform').hide();
+            $('#payment').hide();
+        }
 	});
-	
+    
 	$('input#CheckBill').click(function() {
 		var billIdCheck = true;
 		var paymentIdCheck = true;
