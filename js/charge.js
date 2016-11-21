@@ -159,7 +159,7 @@ jQuery(document).ready(function ($) {
 			$('.connecting').attr('style', 'top:' + ($(window).height() - $('div.connecting').height()) / 2 + 'px; right:' + ($(window).width() - $('div.connecting').width()) / 2 + 'px; display:block!important;');
 			$.ajax({
 				type: 'POST',
-				url: 'http://chr724.ir/services/EasyCharge/' + action,
+				url: 'https://chr724.ir/services/EasyCharge/' + action,
 				data: $('form#chargeform').serialize(),
 				async: false,
 				contentType: "application/json",
@@ -571,7 +571,7 @@ jQuery(document).ready(function ($) {
 		content: {
 			text: 'درحال بارگزاری ...',
 			ajax: {
-				url	: "http://chr724.ir/pages/help",
+				url	: "https://chr724.ir/pages/help",
 				dataType: 'html'
 			},
 			title: {
@@ -935,7 +935,7 @@ jQuery(document).ready(function ($) {
 	
 	$.ajax({
 		type: 'GET',
-		url: "http://chr724.ir/services/EasyCharge/ProductsInfo",
+		url: "https://chr724.ir/services/EasyCharge/ProductsInfo",
 		data: "{}",
 		async: false,
 		contentType: "application/json",
