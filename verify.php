@@ -156,6 +156,67 @@
 							</div>
 						</div>
 				<?php
+					} elseif ($transactionType == 'IN') {
+			?>
+						<div class="right">
+							<div class="panel pink">
+								<div class="panel-header">
+									<div class="bullet left"></div>
+									<div class="arrow left"></div>
+									<p class="step number">1</p>
+									<p class="step title">اطلاعات</p>
+									<p class="step description">اطلاعات مربوط به خرید</p>
+								</div>
+								<div class="panel-body">
+									<div>
+										<table>
+											<tbody>
+												<tr>
+													<td>تاریخ</td>
+													<td><?php echo $result['date']; ?></td>
+												</tr>
+													<td>نام بسته</td>
+													<td class="mw-200"><?php echo $result['products']['name']; ?></td>
+												</tr>
+												<tr>
+													<td>مبلغ بسته</td>
+													<td><?php echo $result['products']['price'] . ' تومان'; ?></td>
+												</tr>
+												<tr>
+												<tr>
+													<td>شماره تلفن همراه</td>
+													<td><?php echo $result['products']['details']['cellphone']; ?></td>
+												</tr>
+												<tr>
+													<td>کد پیگیری</td>
+													<td><?php echo $result['refId']; ?></td>
+												</tr>
+											</tbody>
+										</table>
+										<a class="mainpage" href="<?php echo $root; ?>">صفحه اصلی فروشگاه</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="center">
+							<i class="timeline"></i>
+						</div>
+						<div class="left">
+							<div id="info" class="panel blue">
+								<div class="panel-header">
+									<div class="bullet right"></div>
+									<div class="arrow right"></div>
+									<p class="step number">2</p>
+									<p class="step title">توضیحات</p>
+									<p class="step description">توضیحات مربوط به خرید</p>
+								</div>
+								<div class="panel-body">
+									<img src="<?php echo $root; ?>/img/in-success.png" class="success">
+									<div id="description"><p>به زودی بسته اینترنت خریداری شده فعال خواهد شد.</p></div>
+								</div>
+							</div>
+						</div>
+				<?php
 					} elseif (in_array($transactionType, ['CC', 'GC', 'AN', 'TC'])) {
 						$pinProductDescription = array(
 							'CC' => 'اکنون با وارد کردن کد شارژ از طریق صفحه کلید گوشی، تلفن همراه خود را شارژ نمایید.',
