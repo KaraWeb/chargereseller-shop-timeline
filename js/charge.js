@@ -156,6 +156,7 @@ jQuery(document).ready(function ($) {
 		
 		checkForm();
 		if (sendForm) {
+			$('.cover').fadeIn();
 			$('.connecting p').text('دریافت اطلاعات ...');
 			$('.connecting').attr('style', 'top:' + ($(window).height() - $('div.connecting').height()) / 2 + 'px; right:' + ($(window).width() - $('div.connecting').width()) / 2 + 'px; display:block!important;');
 			$.ajax({
