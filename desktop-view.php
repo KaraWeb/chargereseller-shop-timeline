@@ -10,7 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="css/ion.rangeSlider.css" />
 	<link rel="stylesheet" type="text/css" href="css/ion.rangeSlider.skinNice.css" />
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
-	<link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/help.css" />
 	<title><?php echo $config['title']; ?></title>
 </head>
@@ -36,9 +36,19 @@
 					<div>
 						<div class="service-logo PIN"></div>
 						<span class="sdt_active"></span>
-						<span class="sdt_wrap" style="width:63px;">
+						<span class="sdt_wrap">
 							<span class="icons fa fa-2x fa-mobile"> </span>
 							<span class="sdt_link">کارت شارژ</span>
+						</span>
+					</div>
+				</div>
+				<div class="service-container" data-type="InternetPackage">
+					<div>
+						<div class="service-logo InternetPackage"></div>
+						<span class="sdt_active"></span>
+						<span class="sdt_wrap">
+							<span class="icons fa fa-2x fa-internet-explorer"> </span>
+							<span class="sdt_link">بسته اینترنت</span>
 						</span>
 					</div>
 				</div>
@@ -124,6 +134,16 @@
 								<div data-type="Kaspersky" class="operator Antivirus Kaspersky"><i></i></div>
 								<div data-type="Norton" class="operator Antivirus Norton"><i></i></div>
 								<div class="clear"></div>
+							</div>
+						</div>
+						<div class="InternetPackage">
+							<div class="operators">
+								<div data-type="IN-MTN-Hourly"  id="Hourly" class="operator InternetPackage IN-MTN-Hourly"></div>
+                                <div data-type="IN-MTN-Daily"  id="Daily" class="operator InternetPackage IN-MTN-Daily"></div>
+                                <div data-type="IN-MTN-Weekly"  id="Weekly" class="operator InternetPackage IN-MTN-Weekly"></div>
+                                <div data-type="IN-MTN-Monthly"  id="Monthly" class="operator InternetPackage IN-MTN-Monthly"></div>
+                                <div data-type="IN-MTN-Amazing"  id="Amazing" class="operator InternetPackage IN-MTN-Amazing"></div>
+                                <div data-type="IN-MTN-TDLTE"  id="TDLTE" class="operator InternetPackage IN-MTN-TDLTE"></div>
 							</div>
 						</div>
 						<div id="desc"><h1></h1><p></p></div>
@@ -322,6 +342,46 @@
 										</div>
 										<div class="input text required account">
 											<input id="dataAccountTemp" class="input-large cellphone" type="text" value="" placeholder="شماره موبایل" maxlength="11">
+										</div>
+                                        <div class="save-information">
+                                            <input type="checkbox" value="1" id="save-information" name="data[save-information]">
+                                            <label for="save-information">ذخیره اطلاعات تماس </label> 
+                                        </div>
+									</div>
+								</div>
+								<div class="InternetPackage">
+									<div class="buy">
+										<div class="info">
+											<div id="operator"></div>
+											<div class="title"></div>
+											<div class="description"></div>
+											<div class="clear"></div>
+										</div>
+										<div class="input text required account">
+											<input id="dataAccountTemp" class="input-large cellphone" type="text" value="" placeholder="شماره موبایل" maxlength="11">
+										</div>
+										<div class="input text sim-type-container">
+											<label class="radio-inline">
+												<input type="radio" name="sim-type" value="Prepaid" checked="checked">سیم کارت اعتباری
+											</label>
+											<label class="radio-inline">
+												<input type="radio" name="sim-type" value="Postpaid">سیم کارت دائمی
+											</label>
+										</div>
+										<div class="input text internetPackage-types">
+											<select id="InternetPackageTypes" class="input-large" name="data[packageId]"></select>
+											<input type="hidden" id="UnitAmount" value="0">
+										</div>
+										<div class="input text">
+											<div class="amount-container">
+												<span class="amount-title">مبلغ</span>
+												<span class="amount-value"></span>
+												<span class="amount-unit">تومان</span>
+											</div>
+											<div class="clear"></div>
+										</div>
+										<div class="input text email">
+											<input id="EmailInput" class="input-large" type="email" maxlength="50" value="" title="آدرس ایمیل را به شکل صحیح بنویسید!" rel="tooltip" placeholder="you@domain.com">
 										</div>
                                         <div class="save-information">
                                             <input type="checkbox" value="1" id="save-information" name="data[save-information]">
