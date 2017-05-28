@@ -97,6 +97,7 @@
 			<?php
 					} elseif ($transactionType == 'TopUp') {
 						$operators = array('MCI' => 'همراه اول', 'MTN' => 'ایرانسل', 'RTL' => 'رایتل', 'TAL' => 'تالیا');
+						$operator = explode('-', $result['products']['type']);
 			?>
 						<div class="right">
 							<div class="panel pink">
@@ -121,7 +122,7 @@
 												</tr>
 												<tr>
 													<td>اپراتور شارژ</td>
-													<td><?php echo $operators[explode('-', $result['products']['type'])[1]]; ?></td>
+													<td><?php echo $operators[$operator[1]]; ?></td>
 												</tr>
 												<tr>
 													<td>شماره تلفن همراه</td>
@@ -218,7 +219,7 @@
 							</div>
 						</div>
 				<?php
-					} elseif (in_array($transactionType, ['CC', 'GC', 'AN', 'TC'])) {
+					} elseif (in_array($transactionType, array('CC', 'GC', 'AN', 'TC'))) {
 						$pinProductDescription = array(
 							'CC' => 'اکنون با وارد کردن کد شارژ از طریق صفحه کلید گوشی، تلفن همراه خود را شارژ نمایید.',
 							'GC' => 'با استفاده گیفت کارت خریداری شده می توانید از سرویس هایی همچون خرید نرم افزار، بازی، موسیقی، فیلم، کتاب و ... استفاده نمایید.',
