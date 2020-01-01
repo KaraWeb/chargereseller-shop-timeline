@@ -10,6 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="css/ion.rangeSlider.css" />
 	<link rel="stylesheet" type="text/css" href="css/ion.rangeSlider.skinNice.css" />
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="stylesheet" type="text/css" href="css/sweetalert2.css" />
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/help.css" />
 	<title><?php echo $config['title']; ?></title>
@@ -391,10 +392,11 @@
 								<input type="hidden" id="dataEmail" name="data[email]">
 								<input type="hidden" id="dataType" name="data[type]">
 								<input type="hidden" id="dataProductId" name="data[productId]">
+								<input type="hidden" id="dataIsTarabord" name="data[isTarabord]">
 								<input type="hidden" id="dataIssuer" name="data[issuer]">
 								<input type="hidden" id="dataRedirectToPage" name="data[paymentDetails]" value="true">
 								<input type="hidden" id="dataRedirectToPage" name="data[redirectToPage]" value="true">
-								<input type="hidden" id="dataRedirectToPage" name="data[scriptVersion]" value="Script-5.3">
+								<input type="hidden" id="dataRedirectToPage" name="data[scriptVersion]" value="Script-5.4">
 								<input type="hidden" id="dataRedirectToPage" name="data[firstOutputType]" value="json">
 								<input type="hidden" id="dataRedirectToPage" name="data[secondOutputType]" value="get">
 							</fieldset>
@@ -414,6 +416,7 @@
 	<script type="text/javascript" src="js/ion.rangeSlider.min.js"></script>
 	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
     <script type="text/javascript" src="js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="js/sweetalert2.js"></script>
 	<script type="text/javascript" src="js/charge.js"></script>
 	<script type="text/javascript" src="https://cdn.zarinpal.com/zarinak/v1/checkout.js"></script>
 	<script type="text/javascript">
