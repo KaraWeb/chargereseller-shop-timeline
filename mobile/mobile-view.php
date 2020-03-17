@@ -343,7 +343,7 @@
                                     <li id="Saman" class="bank-Saman" data-tooltip="سامان"></li>
                                     <li id="Melli" class="bank-Melli" data-tooltip="ملی"></li>
                                     <li id="Fanava" class="bank-Fanava" data-tooltip="فن آوا"></li>
-                                    <li id="Emtiyaz" class="bank-Emtiyaz" data-tooltip="امتیاز"></li>
+                                    <li id="Emtiyaz" class="bank-Emtiyaz"   data-tooltip="امتیاز"></li>
                                     <li id="Zarinpal" class="bank-Zarinpal" data-tooltip="زرین پال"></li>
                                 </ul>
                                 <p class="caution">خرید با کلیه کارت های بانکی عضو شبکه شتاب امکان پذیر می باشد.</p>
@@ -361,7 +361,7 @@
                             <input type="hidden" id="dataIssuer" name="data[issuer]">
 							<input type="hidden" id="dataRedirectToPage" name="data[paymentDetails]" value="true">
                             <input type="hidden" id="dataRedirectToPage" name="data[redirectToPage]" value="true">
-                            <input type="hidden" id="dataRedirectToPage" name="data[scriptVersion]" value="Script-5.4">
+                            <input type="hidden" id="dataRedirectToPage" name="data[scriptVersion]" value="Script-5.3">
 							<input type="hidden" id="dataRedirectToPage" name="data[firstOutputType]" value="json">
 							<input type="hidden" id="dataRedirectToPage" name="data[secondOutputType]" value="get">
                         </fieldset>
