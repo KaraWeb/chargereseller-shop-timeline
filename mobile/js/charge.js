@@ -973,6 +973,8 @@ jQuery(document).ready(function ($) {
 		crossDomain: true,
 		success: function(data) {
 			products = data.products;
+            $('.support-number').html(data.support.phone || '');
+            $('.support-email').html(data.support.email || '');
 			paymentGateways = data.paymentGateways;
 			initailize();
 		},
@@ -1023,6 +1025,7 @@ jQuery(document).ready(function ($) {
 				$('#content fieldset > .' + key).html('<p class="service-caution">در حال حاضر در این دسته محصولی برای فروش وجود ندارد.</p>');
 			}
 		});
+
         //Add payment gateways to form
         paymentGateways = paymentGateways.filter(gateway => gateway == 'Zarinpal' || gateway == 'Emtiyaz');
         paymentGateways.push('Default');
