@@ -696,6 +696,31 @@ jQuery(document).ready(function ($) {
         DefaultChargeKind = $(this).data('type');
         $(".services-menu .service-container").removeClass('active');
         $(this).addClass('active');
+        $('.container').find('.no-products').remove();
+        if(DefaultChargeKind === 'GiftCard'){
+            var exists = false;
+            for(var item in products.giftCard){
+                if(products.giftCard[item].length !== 0){
+                    exists = true;
+                }
+            }
+            if(!exists){
+                $('#info .panel-body').append('<p class="no-products" style="text-align: center;padding: 20px 0;">در حال حاضر این محصول موجود نمی باشد.</p>')
+            }
+        }
+
+        if(DefaultChargeKind === 'Antivirus'){
+            var exists = false;
+            for(var item in products.antivirus){
+                if(products.antivirus[item].length !== 0){
+                    exists = true;
+                }
+            }
+            if(!exists){
+                $('#info .panel-body').append('<p class="no-products" style="text-align: center;padding: 20px 0;">در حال حاضر این محصول موجود نمی باشد.</p>')
+
+            }
+        }
         if (jQuery.inArray(DefaultChargeKind, ['Bill', 'GiftCard', 'Antivirus']) == -1) {
             DefaultOperator = 'MTN';
             $('input#magiccharge').prop('checked', false);
@@ -1039,7 +1064,7 @@ jQuery(document).ready(function ($) {
             products = data.products;
             // By suppling no content attribute, the library uses each elements title attribute by default
             $('.support').qtip({
-                content: '<p>پشتیبانی تلفنی: '+(data.support.phone || '')+'</p><p>پشتیبانی گوگل: '+(data.support.email || '')+'</p>',
+                content: '<p>شماره تلفن: '+(data.support.phone || '')+'</p><p>آدرس ایمیل: '+(data.support.email || '')+'</p>',
                 style:
                     {
                         classes: 'qtip-green qtip-rounded qtip-shadow',
@@ -1077,6 +1102,8 @@ jQuery(document).ready(function ($) {
                     $('div.payment-gateways ul li#' + value).attr('style', 'display:inline-block;');
                 });
             });
+        }else{
+            $('.payment-gateways').remove();
         }
         $('div.payment-gateways ul').attr('style', 'width:' + paymentGateways.length * 55 + 'px;');
 
